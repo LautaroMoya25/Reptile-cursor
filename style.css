@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+p {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Segmentos del reptil */
+.reptile-segment {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+/* Cabeza del reptil */
+.reptile-head {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #4caf50, #2e7d32);
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8),
+                0 0 40px rgba(76, 175, 80, 0.4);
+    border: 2px solid #81c784;
+}
+
+/* Ojos del reptil */
+.reptile-head::before,
+.reptile-head::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #000;
+    border-radius: 50%;
+    top: 8px;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.reptile-head::before {
+    left: 7px;
+}
+
+.reptile-head::after {
+    right: 7px;
+}
+
+/* Cuerpo del reptil */
+.reptile-body {
+    background: radial-gradient(circle at 30% 30%, #66bb6a, #388e3c);
+    box-shadow: 0 0 15px rgba(102, 187, 106, 0.6);
+    border: 1px solid #81c784;
+}
+
+/* Cola del reptil */
+.reptile-tail {
+    background: radial-gradient(circle at 30% 30%, #81c784, #4caf50);
+    box-shadow: 0 0 10px rgba(129, 199, 132, 0.4);
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
